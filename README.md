@@ -1,5 +1,4 @@
 # logs-generator
-README
 
 ### Problem Statement
 Consider a monitoring system, which monitors 1000 servers. Each server has 2 CPUs. Each server generates a log for CPU usage every minute.
