@@ -1,7 +1,7 @@
 # logs-generator
 README
 
-###Problem Statement
+### Problem Statement
 Consider a monitoring system, which monitors 1000 servers. Each server has 2 CPUs. Each server generates a log for CPU usage every minute.
 
 The format is like this:
@@ -24,7 +24,7 @@ The tool should support two commands. One command will print results to stdout. 
 
 The tool may take several minutes to initialize, but the query result should be returned within 1 second.
 
-###How to run:
+### How to run:
 1. generate.py
 	Run this command in the command line interface: python generate.py <data_path>
 	Eg: python generate.py temp.txt
@@ -35,7 +35,7 @@ The tool may take several minutes to initialize, but the query result should be 
 	Then enter the query for eg: QUERY 192.168.1.10 1 2014-10-31 00:00 2014-10-31 00:05
 	You will see the output like this, for eg: [('2014-10-31 00:00', '12%'), ('2014-10-31 00:01', '95%'), ('2014-10-31 00:02', '41%'), ('2014-10-31 00:03', '60%'), ('2014-10-31 00:04', '24%')]
 	
-###Implementation:
+### Implementation:
 1. generate.py
 The code takes in the datapath of the file from the input entered by the user in the CLI and creates a file in that path. It then appends these headers to the file: ['Timestamp', 'IP', 'cpu_id', 'usage'].
 Considering 24 hours and 60 minutes, timestamp is generated for the date 2014-10-31. For each timestamp, I consider a combination of network IDs that go from 192.168.0.0 to 192.168.9.99. This generates 1000 server IPs. For each server, I set CPU ids to be 0 and 1. 
